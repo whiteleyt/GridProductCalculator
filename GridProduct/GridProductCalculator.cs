@@ -9,7 +9,7 @@ using GridProduct.GridVisitor;
 namespace GridProduct
 {
     /// <summary>
-    /// Uses the grid enumerators to be able to query grid
+    /// combines the grid and visitors to answer test questions
     /// </summary>
     public class GridProductCalculator : IGridProductCalculator
     {
