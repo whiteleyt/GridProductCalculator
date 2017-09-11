@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GridProduct;
+using System.Diagnostics;
 
 namespace GridProductTest
 {
@@ -57,39 +58,7 @@ namespace GridProductTest
             Assert.AreEqual(expectedCount, actualCount);
         }
 
-        [TestMethod]
-        public void Should_return_count_of_one_for_adjacent_ints_When_all_values_are_same()
-        {
-            var grid = new int[][]
-            {
-                new int[] { 1, 1, 1 },
-                new int[] { 1, 1, 1 },
-                new int[] { 1, 1, 1 },
-            };
-
-            var expectedCount = 1;
-
-            var actualCount = gridProductCalculator.DistinctThreeAdjacentNumbers(grid);
-
-            Assert.AreEqual(expectedCount, actualCount);
-        }
-
-        [TestMethod]
-        public void Should_return_count_of_16_for_adjacent_ints_When_all_values_are_distinct_in_3x3()
-        {
-            var grid = new int[][]
-            {
-                new int[] { 1, 2, 3 },
-                new int[] { 4, 5, 6 },
-                new int[] { 7, 8, 9 },
-            };
-
-            var expectedCount = 16;
-
-            var actualCount = gridProductCalculator.DistinctThreeAdjacentNumbers(grid);
-
-            Assert.AreEqual(expectedCount, actualCount);
-        }
+        
 
         [TestMethod]
         public void Should_return_count_of_28_for_adjacent_ints_When_all_values_are_distinct_in_4x3()
@@ -127,137 +96,19 @@ namespace GridProductTest
         }
 
         [TestMethod]
-        public void Should_return_max_product_of_3_ints_When_the_max_product_is_right()
+        public void Should_return_max_product_When_4x4_grid_supplied()
         {
             var grid = new int[][]
             {
-                new int[] { 1, 2, 3 },
-                new int[] { 4, 5, 6 },
-                new int[] { 7, 8, 9 },
+                new int[] { 1,  2,  3,  4 },
+                new int[] { 5,  6,  7,  8 },
+                new int[] { 9,  10, 11, 12 },
+                new int[] { 13, 14, 15, 16 },
             };
 
-            var expectedCount = 504;
+            var expectedCount = 15 * 16;
 
-            var actualCount = gridProductCalculator.LargestProductOfNAdjacentIntegers(grid, 3);
-
-            Assert.AreEqual(expectedCount, actualCount);
-        }
-
-        [TestMethod]
-        public void Should_return_max_product_of_3_ints_When_the_max_product_is_left()
-        {
-            var grid = new int[][]
-            {
-                new int[] { 1, 2, 3 },
-                new int[] { 4, 5, 6 },
-                new int[] { 9, 8, 7 },
-            };
-
-            var expectedCount = 504;
-
-            var actualCount = gridProductCalculator.LargestProductOfNAdjacentIntegers(grid, 3);
-
-            Assert.AreEqual(expectedCount, actualCount);
-        }
-
-        [TestMethod]
-        public void Should_return_max_product_of_3_ints_When_the_max_product_is_down()
-        {
-            var grid = new int[][]
-            {
-                new int[] { 1, 2, 7 },
-                new int[] { 4, 5, 8 },
-                new int[] { 3, 6, 9 },
-            };
-
-            var expectedCount = 504;
-
-            var actualCount = gridProductCalculator.LargestProductOfNAdjacentIntegers(grid, 3);
-
-            Assert.AreEqual(expectedCount, actualCount);
-        }
-
-        [TestMethod]
-        public void Should_return_max_product_of_3_ints_When_the_max_product_is_up()
-        {
-            var grid = new int[][]
-            {
-                new int[] { 1, 2, 9 },
-                new int[] { 4, 5, 8 },
-                new int[] { 3, 6, 7 },
-            };
-
-            var expectedCount = 504;
-
-            var actualCount = gridProductCalculator.LargestProductOfNAdjacentIntegers(grid, 3);
-
-            Assert.AreEqual(expectedCount, actualCount);
-        }
-
-        [TestMethod]
-        public void Should_return_max_product_of_3_ints_When_the_max_product_is_right_down()
-        {
-            var grid = new int[][]
-            {
-                new int[] { 7, 2, 3 },
-                new int[] { 4, 8, 6 },
-                new int[] { 1, 5, 9 },
-            };
-
-            var expectedCount = 504;
-
-            var actualCount = gridProductCalculator.LargestProductOfNAdjacentIntegers(grid, 3);
-
-            Assert.AreEqual(expectedCount, actualCount);
-        }
-
-        [TestMethod]
-        public void Should_return_max_product_of_3_ints_When_the_max_product_is_left_up()
-        {
-            var grid = new int[][]
-            {
-                new int[] { 9, 2, 3 },
-                new int[] { 4, 8, 6 },
-                new int[] { 1, 5, 7 },
-            };
-
-            var expectedCount = 504;
-
-            var actualCount = gridProductCalculator.LargestProductOfNAdjacentIntegers(grid, 3);
-
-            Assert.AreEqual(expectedCount, actualCount);
-        }
-
-        [TestMethod]
-        public void Should_return_max_product_of_3_ints_When_the_max_product_is_right_up()
-        {
-            var grid = new int[][]
-            {
-                new int[] { 1, 2, 9 },
-                new int[] { 4, 8, 6 },
-                new int[] { 7, 5, 3 },
-            };
-
-            var expectedCount = 504;
-
-            var actualCount = gridProductCalculator.LargestProductOfNAdjacentIntegers(grid, 3);
-
-            Assert.AreEqual(expectedCount, actualCount);
-        }
-
-        [TestMethod]
-        public void Should_return_max_product_of_3_ints_When_the_max_product_is_left_down()
-        {
-            var grid = new int[][]
-            {
-                new int[] { 1, 2, 7 },
-                new int[] { 4, 8, 6 },
-                new int[] { 9, 5, 3 },
-            };
-
-            var expectedCount = 504;
-
-            var actualCount = gridProductCalculator.LargestProductOfNAdjacentIntegers(grid, 3);
+            var actualCount = gridProductCalculator.LargestProductOfNAdjacentIntegers(grid, 2);
 
             Assert.AreEqual(expectedCount, actualCount);
         }

@@ -10,27 +10,21 @@ namespace GridProduct.AdjacentIntegers
     /// <summary>
     /// collects adjacent grid integers in a right direction
     /// </summary>
-    public class RightAdjacentGridIntegers : AdjacentGridIntegers
+    public class RightAdjacentGridIntegers : IAdjacentGridIntegers
     {
-        public RightAdjacentGridIntegers(Grid grid, int adjacentIntegers) : base(grid, adjacentIntegers)
+        public IEnumerable<int[]> GetAdjacentIntegers(GridAdjacentIntegerWindow gridWindow)
         {
-            ErrorIfAdjacentIntegersGreaterThanMaxX(adjacentIntegers);
-        }
+            ArgumentCheck.IsNull(gridWindow, nameof(gridWindow));
 
-        public override IEnumerator<int[]> GetEnumerator()
-        {
-            for (int y = 0; y < _grid.MaxY; y++)
+            for (int y = gridWindow.MinY; y <= gridWindow.MaxY; y++)
             {
-                for (int x = 0; x <= _grid.MaxX - _adjacentIntegers; x++)
+                int[] current = new int[gridWindow.WindowSize];
+                for (int i = 0; i < gridWindow.WindowSize; i++)
                 {
-                    int[] current = new int[_adjacentIntegers];
-                    for (int i = 0; i < _adjacentIntegers; i++)
-                    {
-                        current[i] = _grid.GridData[y][x + i];
-                    }
-
-                    yield return current;
+                    current[i] = gridWindow.GridData[y][gridWindow.MinX + i];
                 }
+
+                yield return current;
             }
         }
     }

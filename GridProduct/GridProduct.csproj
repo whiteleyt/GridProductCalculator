@@ -46,12 +46,16 @@
     <Compile Include="AdjacentIntegers\RightUpAdjacentGridIntegers.cs" />
     <Compile Include="ArgumentCheck.cs" />
     <Compile Include="AdjacentIntegers\DownAdjacentGridIntegers.cs" />
+    <Compile Include="GridVisitor\Distinct3AdjacentGridVisitor.cs" />
     <Compile Include="Grid.cs" />
-    <Compile Include="AdjacentIntegers\AdjacentGridIntegers.cs" />
+    <Compile Include="AdjacentIntegers\IAdjacentGridIntegers.cs" />
     <Compile Include="GridProductCalculator.cs" />
+    <Compile Include="GridAdjacentIntegerWindow.cs" />
     <Compile Include="IGridProductCalculator.cs" />
     <Compile Include="AdjacentIntegers\LeftAdjacentGridIntegers.cs" />
     <Compile Include="AdjacentIntegers\RightAdjacentGridIntegers.cs" />
+    <Compile Include="GridVisitor\IGridVisitor.cs" />
+    <Compile Include="GridVisitor\ProductGridVisitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AdjacentIntegers\UpAdjacentGridIntegers.cs" />
   </ItemGroup>
