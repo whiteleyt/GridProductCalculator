@@ -1,5 +1,17 @@
 # Grid Product Calculator
 
+## Answers
+
+1. How many different combinations are there of three adjacent numbers in the same
+direction (up, down, left, right or diagonally) in the 10 x 10 grid?
+
+**Answer: 574**
+
+2. What is the greatest product of three adjacent numbers in the same direction (up,
+down, left, right or diagonally) in the 10 x 10 grid?
+
+**Answer: 667755**
+
 ## Solution outline
 
 Adjacent integers can be in 8 directions:
