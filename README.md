@@ -47,7 +47,7 @@ My original solution was to have the adjacent integers defined as enumerators so
 
 ```csharp
 
-var distinctCount = new UpAdjacentGridIntegers(numberOfAdjacentIntegers)
+var maximumProduct = new UpAdjacentGridIntegers(numberOfAdjacentIntegers)
 		    .Concat(new RightAdjacentGridIntegers(numberOfAdjacentIntegers))
 		    .Concat(new RightUpAdjacentGridIntegers(numberOfAdjacentIntegers))
 		    .Concat(new RightDownAdjacentGridIntegers(numberOfAdjacentIntegers))
